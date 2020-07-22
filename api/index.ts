@@ -3,7 +3,7 @@ import { getScreenshot } from './_lib/chromium';
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
     console.log('Current Platform:' + process.platform)
-    console.log(req.body)
+    console.log(req)
     const file = await getScreenshot();
     res.statusCode = 200;
     res.setHeader('Content-Type', `image/jpeg`);
