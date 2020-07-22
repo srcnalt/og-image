@@ -11,7 +11,7 @@ export async function getScreenshot(type: FileType) {
 
     const page = await browser.newPage();
     await page.setViewport({ width: 2048, height: 1170 });
-    await page.goto('www.google.com');
+    await page.goto('https://www.google.com');
     const file = await page.screenshot({ type });
     return file;
 }
