@@ -190,6 +190,7 @@ type SetState = (state: Partial<AppState>) => void;
 
 const App = (_: any, state: AppState, setState: SetState) => {
     const setLoadingState = (newState: Partial<AppState>) => {
+        debugger
         window.clearTimeout(timeout);
         if (state.overrideUrl && state.overrideUrl !== newState.overrideUrl) {
             newState.overrideUrl = state.overrideUrl;
@@ -243,6 +244,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
                         options: themeOptions,
                         value: theme,
                         onchange: (val: Theme) => {
+                            debugger
                             const options = val === 'light' ? imageLightOptions : imageDarkOptions
                             let clone = [...images];
                             clone[0] = options[selectedImageIndex].value;
