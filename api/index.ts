@@ -15,5 +15,6 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     await page.goto('https://www.facebook.com');
     const file = await page.screenshot({ type: 'jpeg', path: 'image.jpg' });
     console.log(file)
-    res.status(200).end(file)
+    res.statusCode = 200
+    res.end(file)
 }
